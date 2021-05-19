@@ -1,0 +1,26 @@
+mybatis:
+  type-aliases-package: com.shui.redpacket.**
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    cache-enabled: true
+    map-underscore-to-camel-case: true
+  executor-type: simple
+spring:
+  datasource:
+    druid:
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql:///test
+  redis:
+    host: #ip
+    port: 6379
+    password: #密码
+    jedis:
+      pool:
+        max-idle: 50
+        max-wait: 20000
+        max-active: 50000
+    script:
+      path: lua/redPacket.lua
+    connect-timeout: 5000

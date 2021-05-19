@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>抢红包</title>
+    <script type="text/javascript" th:src="@{/jquery-3.4.1.min.js}" ></script>
+</head>
+<body>
+    <p style="align-content: center">5万人抢只有3万个的20万红包！</p>
+    <script type="text/javascript">
+        $(function () {
+            var max = 2000;
+            for (var i=1;i<=max;i++) {
+                $.ajax({
+                    url:"/grapRedPacket?redPacketId=1&userId=" + i,
+                    type:"GET",
+                    success: function (result) {
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
